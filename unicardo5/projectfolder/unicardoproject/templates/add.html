@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLOT ADDER</title>
+</head>
+<body>
+<div class="container-fluid" >
+<form action="add" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 style="color:black;text-align:center;">ADD THE NEW SLOT</h2>
+    <div class="container-fluid" style="background-color:skyblue;text-align:center;padding:30px;">
+    <input type="text" placeholder="Enter the shop name" name="slot_name"><br>
+    <input type="text" placeholder="Enter the detail about shop" name="slot_desc"><br>
+    <input type="text" placeholder="Enter the location of the shop" name="slot_location"><br>
+    <input type="file" name="slot_image"><br><br>
+    <input type="submit"><br>
+    </div>
+    {% if 'already' == '{{slot_a}}' %}
+    <p style="color:red;font-family:Arial;text-align:center;"> The username is already taked !!,please provide another name</p>
+    {% endif %}
+</form>
+    </div>
+</body>
+</html>
